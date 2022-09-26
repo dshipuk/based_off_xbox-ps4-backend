@@ -1,0 +1,15 @@
+sign-up:
+ -unique username
+ -strong password hash when saving
+ -unique email
+ -agree TOS
+ -Robot Protection front-end?
+log-in:
+ -username
+ -password
+ -Robot Protection front-end?
+user:
+ -
+store:
+ -
+
