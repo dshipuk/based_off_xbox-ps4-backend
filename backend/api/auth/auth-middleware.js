@@ -1,4 +1,12 @@
-const checkUsernameExists = (req, res, next) => {
+const validateRegistration = (req, res, next) => {
+  if (1 == 1) {
+    next();
+  } else {
+    next({});
+  }
+};
+
+const validateLogin = (req, res, next) => {
   if (1 == 1) {
     next();
   } else {
@@ -7,5 +15,6 @@ const checkUsernameExists = (req, res, next) => {
 };
 
 module.exports = {
-  checkUsernameExists,
+  validateLogin,
+  validateRegistration,
 };
