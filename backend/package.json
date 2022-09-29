@@ -6,17 +6,17 @@
   "scripts": {
     "server": "nodemon index.js",
     "start": "node index.js",
-    "migrate": "knex migrate:latest --knexfile config/knexfile.js",
-    "rollback": "knex migrate:rollback --knexfile config/knexfile.js",
+    "migrate": "knex migrate:latest --knexfile knexfile.js",
+    "rollback": "knex migrate:rollback --knexfile knexfile.js",
     "watch:dev": "nodemon",
     "lint": "npx eslint .",
     "lint:fix": "npx eslint --fix .",
     "format": "npx prettier --write \"**/*.+(js|jsx|json|yml|yaml|css|md)\"",
-    "knex": "npx knex --knexfile config/knexfile.js",
+    "knex": "npx knex --knexfile knexfile.js",
     "tests": "cross-env NODE_ENV=test jest --verbose --runInBand",
     "coverage": "CI=true npx jest --coverage --detectOpenHandles --forceExit",
-    "seed": "knex seed:run --knexfile config/knexfile.js",
-    "update": "npx knex --knexfile config/knexfile.js migrate:rollback && npx knex --knexfile config/knexfile.js migrate:latest && npx knex --knexfile config/knexfile.js seed:run"
+    "seed": "knex seed:run --knexfile knexfile.js",
+    "update": "npx knex --knexfile knexfile.js migrate:rollback && npx knex --knexfile knexfile.js migrate:latest && npx knex --knexfile knexfile.js seed:run"
   },
   "keywords": [],
   "author": "",
