@@ -5,13 +5,32 @@ const User = require("../user/user-model");
 const { validateLogin, validateRegistration } = require("./auth-middleware.js");
 
 router.get("/", (req, res, next) => {
-  if (1 == 1) {
-    User.all().then(data => {
+  User.all()
+    .then(data => {
       res.status(200).json(data);
+    })
+    .catch(err => {
+      next({ err });
     });
-  } else {
-    next();
-  }
+});
+
+router.get("/user", (req, res, next) => {
+  User.findByName(req.body.name)
+    .then(data => {
+      res.status(200).json(data);
+    })
+    .catch(err => {
+      next({ err });
+    });
+});
+router.get("/id", (req, res, next) => {
+  User.findById(req.body.id)
+    .then(data => {
+      res.status(200).json(data);
+    })
+    .catch(err => {
+      next({ err });
+    });
 });
 
 router.post("/register", validateRegistration, (req, res, next) => {
