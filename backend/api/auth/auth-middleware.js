@@ -17,22 +17,14 @@ const restricted = (req, res, next) => {
   });
 };
 
-const validateRegistration = (req, res, next) => {
-  if (1 == 1) {
+const checkUsernameExists = async (res, req, next) => {
+  try {
+    // Wip
     next();
-  } else {
-    next({});
+  } catch (err) {
+    next(err);
   }
 };
-
-const validateLogin = (req, res, next) => {
-  if (1 == 1) {
-    next();
-  } else {
-    next({});
-  }
-};
-
 module.exports = {
   validateLogin,
   validateRegistration,
